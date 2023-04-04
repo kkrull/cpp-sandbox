@@ -2,9 +2,11 @@
 CXX=clang++
 CXXFLAGS=-std=c++11 -stdlib=libc++
 
-bin/helloworld: helloworld.o
+objects = helloworld.o
+
+bin/helloworld: $(objects)
 	@mkdir -p bin
-	$(CXX) $(CXXFLAGS) -o bin/helloworld helloworld.o
+	$(CXX) $(CXXFLAGS) -o bin/helloworld $(objects)
 	@echo "Created: bin/helloworld"
 
 helloworld.o: helloworld.cpp
