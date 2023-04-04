@@ -10,7 +10,6 @@ bin/helloworld: $(objects)
 	@echo "Created: bin/helloworld"
 
 helloworld.o: helloworld.cpp
-	$(CXX) $(CXXFLAGS) -c helloworld.cpp
 
 .PHONY: clean
 clean:
