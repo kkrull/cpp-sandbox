@@ -1,8 +1,10 @@
+CXX=clang++
+CXXFLAGS=-std=c++11 -stdlib=libc++
 .DEFAULT_GOAL := bin/helloworld
 
 bin/helloworld: helloworld.cpp
 	mkdir -p bin
-	clang++ -std=c++11 -stdlib=libc++ helloworld.cpp -o bin/helloworld
+	$(CXX) $(CXXFLAGS) helloworld.cpp -o bin/helloworld
 
 .PHONY: clean
 clean:
