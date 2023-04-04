@@ -2,7 +2,7 @@
 
 bin/helloworld: helloworld.cpp
 	mkdir -p bin
-	clang++ helloworld.cpp -o bin/helloworld
+	clang++ -std=c++11 -stdlib=libc++ helloworld.cpp -o bin/helloworld
 
 .PHONY: clean
 clean:
