@@ -9,8 +9,6 @@ bin/helloworld: $(objects)
 	$(CXX) $(CXXFLAGS) -o bin/helloworld $(objects)
 	@echo "Created: bin/helloworld"
 
-helloworld.o: helloworld.cpp
-
 .PHONY: clean
 clean:
 	rm -Rf bin/ *.o
