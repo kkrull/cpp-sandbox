@@ -2,9 +2,12 @@
 CXX=clang++
 CXXFLAGS=-std=c++11 -stdlib=libc++
 
-bin/helloworld: helloworld.cpp
+bin/helloworld: helloworld.o
 	@mkdir -p bin
-	$(CXX) $(CXXFLAGS) helloworld.cpp -o bin/helloworld
+	$(CXX) $(CXXFLAGS) -o bin/helloworld helloworld.o
+
+helloworld.o: helloworld.cpp
+	$(CXX) $(CXXFLAGS) -c helloworld.cpp
 
 .PHONY: clean
 clean:
