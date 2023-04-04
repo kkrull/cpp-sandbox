@@ -3,12 +3,14 @@ CXX=clang++
 CXXFLAGS=-std=c++11 -stdlib=libc++
 
 objects = helloworld.o
+output_dir = $(CURDIR)/bin
+executable = $(output_dir)/helloworld
 
-bin/helloworld: $(objects)
-	@mkdir -p bin
-	$(CXX) $(CXXFLAGS) -o bin/helloworld $(objects)
-	@echo "Created: bin/helloworld"
+$(executable): $(objects)
+	@mkdir -p $(output_dir)
+	$(CXX) $(CXXFLAGS) -o $(executable) $(objects)
+	@echo "Created: $(executable)"
 
 .PHONY: clean
 clean:
-	rm -Rf bin/ $(objects)
+	rm -Rf $(executable) $(objects)
