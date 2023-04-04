@@ -11,4 +11,4 @@ bin/helloworld: $(objects)
 
 .PHONY: clean
 clean:
-	rm -Rf bin/ *.o
+	rm -Rf bin/ $(objects)
