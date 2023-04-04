@@ -1,7 +1,8 @@
-.DEFAULT_GOAL := helloworld
+.DEFAULT_GOAL := bin/helloworld
 
-helloworld: helloworld.cpp
-	clang++ helloworld.cpp -o helloworld
+bin/helloworld: helloworld.cpp
+	mkdir -p bin
+	clang++ helloworld.cpp -o bin/helloworld
 
 .PHONY: clean
 clean:
