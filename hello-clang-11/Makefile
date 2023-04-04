@@ -3,7 +3,7 @@ CXX=clang++
 CXXFLAGS=-std=c++11 -stdlib=libc++
 
 objects = helloworld.o
-output_dir = $(CURDIR)/bin
+output_dir = bin
 executable = $(output_dir)/helloworld
 
 $(executable): $(objects)
@@ -14,3 +14,6 @@ $(executable): $(objects)
 .PHONY: clean
 clean:
 	rm -Rf $(executable) $(objects)
+
+run: $(executable)
+	@$(executable)
