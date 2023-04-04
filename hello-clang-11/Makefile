@@ -1,5 +1,7 @@
+#Configuration for MacOS with XCode tools installed
 CXX=clang++
 CXXFLAGS=-std=c++11 -stdlib=libc++
+
 .DEFAULT_GOAL := bin/helloworld
 
 bin/helloworld: helloworld.cpp
