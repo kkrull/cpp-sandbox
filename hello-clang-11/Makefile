@@ -3,7 +3,8 @@
 CXX := clang++
 CXXFLAGS := -std=c++11 -stdlib=libc++
 
-objects := helloworld.o
+sources := $(wildcard *.cpp)
+objects := $(patsubst %.cpp,%.o,$(sources))
 output_dir := bin
 executable := $(output_dir)/helloworld
 
