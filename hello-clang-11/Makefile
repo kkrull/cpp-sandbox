@@ -1,5 +1,5 @@
 #Configuration for MacOS with XCode tools installed
-#TODO Conditional for platform-specific settings?
+#TODO Conditional for platform-specific settings?  `uname -s` with `ifeq`?
 CXX := clang++
 CXXFLAGS := -std=c++11 -stdlib=libc++
 
