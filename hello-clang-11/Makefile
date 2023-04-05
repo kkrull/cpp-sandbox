@@ -1,10 +1,11 @@
 #Configuration for MacOS with XCode tools installed
-CXX=clang++
-CXXFLAGS=-std=c++11 -stdlib=libc++
+#TODO Conditional for platform-specific settings?
+CXX := clang++
+CXXFLAGS := -std=c++11 -stdlib=libc++
 
-objects = helloworld.o
-output_dir = bin
-executable = $(output_dir)/helloworld
+objects := helloworld.o
+output_dir := bin
+executable := $(output_dir)/helloworld
 
 $(executable): $(objects)
 	@mkdir -p $(output_dir)
