@@ -1,10 +1,17 @@
-#Configuration for MacOS with XCode tools installed
-CXX=clang++
-CXXFLAGS=-std=c++11 -stdlib=libc++
+# Compiler settings
 
-objects = helloworld.o
-output_dir = bin
-executable = $(output_dir)/helloworld
+uname := $(shell uname)
+ifeq ($(uname), Darwin)
+	CXX := clang++
+	CXXFLAGS := -std=c++11 -stdlib=libc++
+endif
+
+# Project settings
+
+sources := $(wildcard *.cpp)
+objects := $(patsubst %.cpp,%.o,$(sources))
+output_dir := bin
+executable := $(output_dir)/helloworld
 
 $(executable): $(objects)
 	@mkdir -p $(output_dir)
