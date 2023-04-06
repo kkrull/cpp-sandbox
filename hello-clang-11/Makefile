@@ -1,7 +1,12 @@
-#Configuration for MacOS with XCode tools installed
-#TODO Conditional for platform-specific settings?  `uname -s` with `ifeq`?
-CXX := clang++
-CXXFLAGS := -std=c++11 -stdlib=libc++
+# Compiler settings
+
+uname := $(shell uname)
+ifeq ($(uname), Darwin)
+	CXX := clang++
+	CXXFLAGS := -std=c++11 -stdlib=libc++
+endif
+
+# Project settings
 
 sources := $(wildcard *.cpp)
 objects := $(patsubst %.cpp,%.o,$(sources))
