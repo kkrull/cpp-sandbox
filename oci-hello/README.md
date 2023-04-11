@@ -14,5 +14,3 @@ This post describes the diffeerence between `gcc` and `g++`:
 
 Who has time to remember how to run Docker?  Just use the `Makefile`!
 
-TODO KDK: Add volume mount when running the container, to see if it can view a file.  Try running it
-in interactive mode first
