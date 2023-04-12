@@ -1,9 +1,9 @@
 PODMAN := $(shell command -v podman.exe 2> /dev/null)
 ifdef PODMAN
-  #Podman on WSL: Use short form to avoid whitespace in Program Files/
+	#Podman on WSL: Use short form to avoid whitespace in Program Files/
 	docker := podman.exe
 else
-  #Native docker installed
+	#Native docker installed
 	docker := docker
 endif
 
