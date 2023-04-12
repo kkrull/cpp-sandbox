@@ -1,5 +1,11 @@
-#TODO KDK: How to detect WSL, or that docker and podman are aliases?
-docker := podman.exe
+PODMAN := $(shell command -v podman.exe 2> /dev/null)
+ifdef PODMAN
+  #Podman on WSL: Use short form to avoid whitespace in Program Files/
+	docker := podman.exe
+else
+  #Native docker installed
+	docker := docker
+endif
 
 .PHONY: docker-build
 docker-build:
