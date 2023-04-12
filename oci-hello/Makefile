@@ -5,6 +5,10 @@ docker := podman.exe
 docker-build:
 	$(docker) build -t kkrull/gcc:latest .
 
+.PHONY: docker-clean
+docker-clean:
+	-$(docker) rmi kkrull/gcc:latest
+
 .PHONY: docker-interactive
 docker-interactive:
 	$(docker) run -it --rm -vsrc:/src kkrull/gcc:latest bash
