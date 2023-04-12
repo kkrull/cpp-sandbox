@@ -14,3 +14,11 @@ This post describes the diffeerence between `gcc` and `g++`:
 
 Who has time to remember how to run Docker?  Just use the `Makefile`!
 
+```shell
+make docker-build #Build the dev image
+make docker-run #Runs `make` in the container, working at src/
+make docker-interactive #Start an interactive session in the container
+```
+
+When finished, the contents of `src/` are updated with whatever that `Makefile`
+produces (e.g. a compiled program).
