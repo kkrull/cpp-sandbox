@@ -13,6 +13,11 @@ objects := $(patsubst %.cpp,%.o,$(sources))
 output_dir := bin
 executable := $(output_dir)/helloworld
 
+# Recipes
+
+.PHONY: build
+build: $(executable)
+
 $(executable): $(objects)
 	@mkdir -p $(output_dir)
 	$(CXX) $(CXXFLAGS) -o $(executable) $(objects)
