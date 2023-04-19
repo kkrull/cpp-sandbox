@@ -25,6 +25,3 @@ docker-clean:
 docker-interactive:
 	$(docker) run -it --rm -v$(src_dir):/src kkrull/gcc:latest bash
 
-.PHONY: docker-run
-docker-run:
-	$(docker) run --rm -v$(src_dir):/src kkrull/gcc:latest

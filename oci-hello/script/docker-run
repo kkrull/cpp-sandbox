@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+PODMAN=$(command -v podman.exe 2> /dev/null)
+if [ ! -z "$PODMAN" ]
+then
+	#Podman on WSL: Use short form to avoid whitespace in Program Files
+  DOCKER='podman.exe'
+else
+	#Native docker installed
+  DOCKER='docker'
+fi
+
+src_dir=${0../src:a}
+$DOCKER run --rm -v${src_dir}:/src kkrull/gcc:latest $@
