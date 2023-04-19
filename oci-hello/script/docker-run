@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -x
+
 PODMAN=$(command -v podman.exe 2> /dev/null)
 if [ ! -z "$PODMAN" ]
 then
@@ -10,5 +12,6 @@ else
   DOCKER='docker'
 fi
 
-src_dir=${0../src:a}
-$DOCKER run --rm -v${src_dir}:/src kkrull/gcc:latest $@
+self_dir=$(dirname $0)
+src_dir="${self_dir}/../src"
+$DOCKER run --rm -v${src_dir:a}:/src kkrull/gcc:latest $@
