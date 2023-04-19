@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-set -x
-
 PODMAN=$(command -v podman.exe 2> /dev/null)
 if [ ! -z "$PODMAN" ]
 then
