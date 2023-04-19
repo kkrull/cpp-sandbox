@@ -22,3 +22,21 @@ make docker-interactive #Start an interactive session in the container
 
 When finished, the contents of `src/` are updated with whatever that `Makefile`
 produces (e.g. a compiled program).
+
+## Useful?
+
+Well it does exactly what I told it to.  If I say to build, it builds...on Linux (which is what I
+told it to).  So that's great for cross-compiling; not so great for using Docker to build binaries
+for MacOS.
+
+There is probably a way to configure GCC (or LLVM) to target another architecture, but I'm not sure
+it's worth the trouble here.  It migth be good for a build server, however.
+
+There may still be other uses for the `gcc` image, but I will have to think about it.
+
+In the meantime, run to your heart's content with
+
+```shell
+make docker-build
+./scripts/docker-run [...args]
+```
