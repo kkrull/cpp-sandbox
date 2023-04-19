@@ -17,8 +17,13 @@ docker-clean:
 
 .PHONY: docker-interactive
 docker-interactive:
-	$(docker) run -it --rm -vsrc:/src kkrull/gcc:latest bash
+	$(docker) run -it --rm -v$(pwd)/src:/src kkrull/gcc:latest bash
 
 .PHONY: docker-run
 docker-run:
+	#TODO KDK: Use an absolute path for local src, then it works
 	$(docker) run --rm -vsrc:/src kkrull/gcc:latest
+
+.PHONY: test
+test:
+	echo "Makefile: $MAKEFILE"
