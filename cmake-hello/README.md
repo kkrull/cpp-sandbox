@@ -42,3 +42,12 @@ cmake -G
 build/ $ make
 ...
 ```
+
+## Example
+
+```shell
+build/ $ cmake ..
+build/ $ make greet
+build-time message from CMake
+Built target greet
+```
