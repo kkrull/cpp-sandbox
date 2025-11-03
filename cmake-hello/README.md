@@ -18,13 +18,22 @@ Build with whatever the default generator is, for your platform:
 
 ```shell
 build/ $ cmake ..
-...
+Hello from CMake
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: .../cmake-hello/build
 ```
 
 Or build with a specific generator:
 
 ```shell
-build/ $ cmake .. -G <generator>
+build/ $ cmake -G 'Unix Makefiles'
+```
+
+List available generators:
+
+```shell
+cmake -G
 ```
 
 ### Run build files
