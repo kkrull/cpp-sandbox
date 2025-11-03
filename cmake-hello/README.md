@@ -6,6 +6,12 @@ Source: <https://cmake.org/cmake/help/latest/>
 
 ## Run
 
+### Clear cache
+
+```shell
+git clean -fdx
+```
+
 ### Generate build files
 
 Build with whatever the default generator is, for your platform:
