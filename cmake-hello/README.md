@@ -1,9 +1,29 @@
 # Hello World with CMake
 
-TODO KDK: Look up cmake to see how it handles platform specific settings
+First time trying out CMake.
 
-https://cmake.org/cmake/help/latest/
+Source: <https://cmake.org/cmake/help/latest/>
 
+## Run
 
-this might also help:
-https://stackoverflow.com/questions/10046114/in-cmake-how-can-i-test-if-the-compiler-is-clang?noredirect=1&lq=1
+### Generate build files
+
+Build with whatever the default generator is, for your platform:
+
+```shell
+build/ $ cmake ..
+...
+```
+
+Or build with a specific generator:
+
+```shell
+build/ $ cmake .. -G <generator>
+```
+
+### Run build files
+
+```shell
+build/ $ make
+...
+```
